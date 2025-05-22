@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - JOMPO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    function sendEmail(e) {
+      e.preventDefault();
+      emailjs.init("cO_q7nd2kjfCGR_Yb");
+      emailjs.sendForm("service_ciao27d", "2ilyi8c", e.target)
+        .then(() => alert("Message sent!"))
+        .catch((error) => alert("Failed to send: " + error.text));
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="community.html">Community</a>
+      <a href="dream.html">Dream Soccer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>We’d Love to Hear From You!</h2>
+      <p>Have a question, idea, or want to partner with JOMPO? Fill in the form below and we’ll get back to you.</p>
+
+      <form onsubmit="sendEmail(event)">
+        <input type="text" name="from_name" placeholder="Your Name" required><br>
+        <input type="email" name="from_email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us at: info@jompo.org</p>
+    <p>&copy; 2025 JOMPO Digital Solutions. All rights reserved.</p>
+  </footer>
+</body>
+</html>
